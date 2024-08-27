@@ -11,6 +11,7 @@ import {
   MapPin,
   MapPinHouse,
 } from "lucide-react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
@@ -35,7 +36,6 @@ const ctaLists = [
 export default function LocationPage() {
   // const searchParams = useSearchParams();
   const router = useRouter();
-  const [openMap, setOpenMap] = useState(false);
 
   // const ctaParam = searchParams.get("cta");
   const handleBack = () => {
@@ -134,15 +134,12 @@ export default function LocationPage() {
           </div>
         </div>
       </div>
-      <div
+      <Link
+        href={"/location/add-location"}
         className="w-full py-4 flex items-center justify-center gap-4 cursor-pointer"
-        onClick={() => {
-          setOpenMap(!openMap);
-        }}
       >
-        <Map size={32} className="text-gray-500" />
         <span className="font-bold">Chọn từ bản đồ</span>
-      </div>
+      </Link>
     </section>
   );
 }

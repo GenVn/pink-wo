@@ -45,9 +45,7 @@ const GoogleMapComponent = () => {
         >
           <AdvancedMarker ref={markerRef} position={markerLocation} />
         </Map>
-        <MapControl position={ControlPosition.TOP_CENTER}>
-          <PlaceAutocomplete onPlaceSelect={setSelectedPlace} />
-        </MapControl>
+        <PlaceAutocomplete onPlaceSelect={setSelectedPlace} />
         <MapHandler place={selectedPlace} marker={marker} />
       </div>
     </APIProvider>
